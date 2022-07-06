@@ -37,13 +37,24 @@ const guardarLocal = (clave, valor) => {
 	localStorage.setItem(clave, valor);
 };
 
-//Almacenar producto por producto
 for (const producto of productos) {
 	guardarLocal(producto.id, JSON.stringify(producto));
 }
-// o almacenar array completo
 guardarLocal("listaProductos", JSON.stringify(productos));
 
 let lista = JSON.parse(localStorage.getItem("listaProductos"));
 console.log(lista);
 console.log(productos);
+
+const btnEnviar= document.querySelector("#enviar")
+
+btnEnviar.addEventListener('click', ()=>{
+	Swal.fire({
+        title: '¿Dirigir a finalizar compra?',
+        icon: 'question',
+        showConfirmButton: false,
+        allowOutsideClick: true,
+        footer:`<a class="btn btn-primary" href="pages/checkout.html">Aceptar</a>`
+	})
+})
+
