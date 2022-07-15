@@ -1,0 +1,22 @@
+[
+    { 
+       "nombre":"Contorno de ojos Esencial Pollution",
+       "desc": "Contorno de ojos hidratante y descongestivo",
+      "img": "https://korebi.com/633-large_default/contorno-de-ojos-de-juventud-esencial-pollution-defense-germaine-de-capuccini.jpg"
+    },
+    {
+       "nombre":"Gel Limpiador Extra Comfort",
+       "desc": "Limpiador para pieles normales a sensibles",
+      "img": "https://media.cosmeticos24h.com/11177-large_default/b-calm-gel-de-agua-micelar-germaine-de-capuccini.jpg"
+    },
+    {
+       "nombre":"Crema Humectante Excel Therapy",
+       "desc": "Crema hidratante para pieles +35",
+      "img": "http://www.germaine-de-capuccini.uy/cms/wp-content/uploads/2011/05/2018-Crema__O2-Pollution-Defense.jpg"
+    },
+    {
+       "nombre":"Loción Hidratante B-Calm",
+       "desc": "Loción para pieles enrojecidas y con acné",
+      "img":"https://www.acstudio.uy/wp-content/uploads/2019/09/CREMA-HIDRATANTE-FUNDAMENTAL-RICA-.jpg"
+    }
+ ]

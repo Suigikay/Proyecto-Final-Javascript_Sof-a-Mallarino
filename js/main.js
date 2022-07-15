@@ -1,4 +1,4 @@
-// --------BOTONERA--------
+// --------Botonera de aumentar y disminuir cantidad--------
 
 let incrementar = document.getElementsByClassName("aumentar");
 let disminuir = document.getElementsByClassName("disminuir");
@@ -27,10 +27,12 @@ for (let i = 0; i < disminuir.length; i++) {
 	});
 }
 
+//Json Storage
+
 const productos = [
 	{id: 1, producto: "Crema Antioxidante", precio: 1800},
 	{id: 2, producto: "Serum BHA", precio: 1600},
-	{id: 3, producto: "Espuma de Limpieza", precio: 700},
+	{id: 3, producto: "Espuma de Limpieza", precio: 700}
 ];
 
 const guardarLocal = (clave, valor) => {
@@ -46,6 +48,10 @@ let lista = JSON.parse(localStorage.getItem("listaProductos"));
 console.log(lista);
 console.log(productos);
 
+
+
+//Boton "Proceder al pago" y "Finalizar compra" con Sweet Alert
+
 const btnEnviar= document.querySelector("#enviar")
 
 btnEnviar.addEventListener('click', ()=>{
@@ -58,3 +64,43 @@ btnEnviar.addEventListener('click', ()=>{
 	})
 })
 
+//Async function con array de productos en Json
+
+const listaPost = document.querySelector("#post");
+const url = "./stock/stock.json";
+
+const pedirProductos = async ()=>{
+    const respuesta = await fetch(url)
+    const productos = await respuesta.json()
+    
+    productos.forEach((productos) => {
+      const section = document.createElement("section");
+      const { img, nombre, desc } = productos;
+      section.innerHTML = 
+       `
+  <section class="">
+    <div class="d-flex align-content-center flex-wrap">
+        <div class="m-2 col-md-2 col-lg-2 " >
+            <div class="card" style="width: 17rem;">
+                <div class="card-body">
+                <img class="card-img-top" id="imgMuestra" src="${img}">
+                <h5 class="card-title" id="nombreMuestra" >${nombre}</h5>
+                <p class="card-text" id="descMuestra" >${desc}</p>
+                <button class="btn btn-dark">Elegir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+        `;
+
+      listaPost.append(section);
+    });
+
+}
+pedirProductos()
+
+
+
+
+                    
