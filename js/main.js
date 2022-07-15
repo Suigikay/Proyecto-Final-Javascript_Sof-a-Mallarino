@@ -74,14 +74,13 @@ const pedirProductos = async ()=>{
     const productos = await respuesta.json()
     
     productos.forEach((productos) => {
-      const section = document.createElement("section");
+      const div = document.createElement("div");
+      div.classList.add("container-fluid", "row")
       const { img, nombre, desc } = productos;
-      section.innerHTML = 
+      div.innerHTML = 
        `
-  <section class="">
-    <div class="d-flex align-content-center flex-wrap">
         <div class="m-2 col-md-2 col-lg-2 " >
-            <div class="card" style="width: 17rem;">
+            <div class="card">
                 <div class="card-body">
                 <img class="card-img-top" id="imgMuestra" src="${img}">
                 <h5 class="card-title" id="nombreMuestra" >${nombre}</h5>
@@ -90,11 +89,9 @@ const pedirProductos = async ()=>{
                 </div>
             </div>
         </div>
-    </div>
- </section>
         `;
 
-      listaPost.append(section);
+      listaPost.append(div);
     });
 
 }
